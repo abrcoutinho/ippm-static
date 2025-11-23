@@ -1,0 +1,108 @@
+@use "variables" as *
+
+.header
+	flex: 0 0 4rem
+	height: 4rem
+	box-sizing: border-box
+	background-color: var(--neutral_0)
+	border-radius: 2rem 2rem 0 0
+	display: flex
+
+	figure
+		flex: 0 0 16.25rem
+		box-sizing: border-box
+		padding: .65rem .75rem
+		display: flex
+		align-items: center
+
+		img
+			max-width: 100%
+			max-height: 100%
+			object-fit: contain
+
+	& > p
+		flex: 1
+		display: flex
+		flex-wrap: wrap
+		align-content: center
+		color: var(--brand)
+
+		em
+			display: block
+			flex: 0 0 100%
+			font-size: 1.25rem
+			line-height: 1.5rem
+			font-weight: 600
+
+		small
+			display: block
+			flex: 0 0 100%
+			font-size: .8rem
+			line-height: 1rem
+
+
+	.top-right-buttons
+		display: flex
+		height: 100%
+		align-items: center
+		padding: 0 .75rem
+
+		button, a
+			flex: 0 0 3.5rem
+			height: 3.5rem
+			display: flex
+			align-items: center
+			justify-content: center
+
+		.notifications-bt
+			opacity: .8
+			&:hover
+				opacity: 1
+			i
+				flex: 0 0 1.5rem
+				height: 1.5rem
+				background-color: var(--neutral_100)
+				mask-image: url("/ippm-static/img/icons/bell.svg")
+				mask-repeat: no-repeat
+				mask-size: contain
+
+		.help-bt
+			opacity: .8
+			&:hover
+				opacity: 1
+			i
+				flex: 0 0 1.5rem
+				height: 1.5rem
+				background-color: var(--neutral_100)
+				mask-image: url("/ippm-static/img/icons/help.svg")
+				mask-repeat: no-repeat
+				mask-size: contain
+
+		.user-bt
+			padding: 0 2rem 0 .25rem
+			display: flex
+			align-items: center
+			position: relative
+			dfn
+				flex: 0 0 2.75rem
+				height: 2.75rem
+				border-radius: 100%
+				background-color: var(--neutral_10)
+				font-size: 1.125rem
+				line-height: 2.75rem
+				text-transform: uppercase
+				font-style: normal
+			i
+				width: 1.5rem
+				height: 1.5rem
+				background-color: var(--neutral_100)
+				mask-image: url("/ippm-static/img/icons/down.svg")
+				mask-repeat: no-repeat
+				mask-size: contain
+				position: absolute
+				top: 50%
+				right: .25rem
+				transform: translateY(-50%)
+				opacity: .7
+			&:hover i
+				opacity: 1

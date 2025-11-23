@@ -1,0 +1,25 @@
+---
+import Head from '../components/Head.astro';
+import Header from '../components/Header.astro';
+import Menu from '../components/Menu.astro';
+import '../styles/main.sass';
+
+const { lang, title, description, pageClass } = Astro.props;
+---
+<!DOCTYPE html>
+<html
+	lang={lang || 'pt-BR'} data-theme="light" data-contrast="light">
+	<Head title={title} description={description} lang={lang} />
+	<body>
+		<div class="app">
+			<Header />
+			<div class="main-wrapper">
+				<Menu />
+				<main class={pageClass}>
+					<slot />
+				</main>
+			</div>
+		</div>
+		<script type="module" src={`${import.meta.env.BASE_URL}/js/scripts.js`} is:client></script>
+	</body>
+</html>

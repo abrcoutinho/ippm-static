@@ -1,0 +1,139 @@
+---
+---
+<nav class="menu closed">
+	<header>
+		<button class="show-hide" title="Exibir/Ocultar"><i></i></button>
+	</header>
+
+	<ul>
+		<li>
+			<a href="#" title="Início" class="current">
+				<i></i>
+				<b>Início</b>
+			</a>
+		</li>
+		<li>
+			<a href="#" title="Projetos">
+				<i></i>
+				<b>Projetos</b>
+				<span class="counter">2</span>
+			</a>
+		</li>
+		<li>
+			<a href="#" title="Portfolio de Recursos">
+				<i></i>
+				<b>Portfolio de Recursos</b>
+			</a>
+		</li>
+		<li>
+			<a href="#" title="Central de Ações">
+				<i></i>
+				<b>Central de Ações</b>
+				<span class="alarm"><i></i></span>
+			</a>
+		</li>
+		<li>
+			<a href="#" title="Minhas Tarefas">
+				<i></i>
+				<b>Minhas Tarefas</b>
+				<span class="alarm"><i></i></span>
+			</a>
+		</li>
+		<li>
+			<a href="#" title="Menções">
+				<i></i>
+				<b>Menções</b>
+			</a>
+		</li>
+		<li>
+			<a href="#" title="Calendários">
+				<i></i>
+				<b>Calendários</b>
+			</a>
+		</li>
+		<li>
+			<a href="#" title="Meus Riscos">
+				<i></i>
+				<b>Meus Riscos</b>
+				<span class="alarm"><i></i></span>
+			</a>
+		</li>
+		<li>
+			<a href="#" title="Meus Problemas">
+				<i></i>
+				<b>Meus Problemas</b>
+			</a>
+		</li>
+		<li class="dropdown" title="Favoritos">
+			<div>
+				<i></i>
+				<b>Favoritos</b>
+				<span></span>
+			</div>
+			<ul>
+				<li>
+					<a href="#" title="Meus Cronogramas">
+						<i></i>
+						<b>Meus Cronogramas</b>
+					</a>
+				</li>
+				<li>
+					<a href="#" title="Tarefas de Período">
+						<i></i>
+						<b>Tarefas de Período</b>
+					</a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#" title="Kanban">
+				<i></i>
+				<b>Kanban</b>
+			</a>
+		</li>
+	</ul>
+
+	<footer>
+		<input id="switch_theme" type="checkbox" title="Claro/Escuro">
+		<img src="/ippm-static/img/ippm-pmo.png" alt="iPPM">
+	</footer>
+</nav>
+
+<script>
+
+// Show/hide menu
+const button = document.querySelector('.show-hide');
+const menu = document.querySelector('.menu');
+button.addEventListener('click', () => {
+    menu.classList.toggle('closed');
+});
+
+// Color theme
+const switchTheme = document.getElementById('switch_theme');
+const logo = document.querySelector(".logo");
+function toggleTheme(e) {
+  if(e.target.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    logo.src = "/ippm-static/img/logo-dark.svg";
+    switchTheme.className = "on";
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    logo.src = "/ippm-static/img/logo.svg";
+    switchTheme.className = "off";
+  }
+}
+switchTheme.addEventListener('change', toggleTheme, false);
+
+// dropdown menu item
+const dropdowns = document.querySelectorAll('.dropdown');
+dropdowns.forEach(drop => {
+	drop.addEventListener('click', function () {
+		const isOn = this.classList.contains('on');
+		dropdowns.forEach(d => d.classList.remove('on'));
+		if (!isOn) {
+			this.classList.add('on');
+		}
+	});
+});
+
+</script>

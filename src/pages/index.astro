@@ -1,16 +1,159 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Projetos" pageClass="main page-index" description="Soluções Completas para Escritórios de Projetos (PMOs)">
+
+	<header class="page-header">
+		<h1>Projetos</h1>
+	</header>
+
+	<article>
+		<ul class="tabs">
+			<li>
+				<a href="#" title="Projetos" class="current">
+					<i></i>
+					<b>Projetos</b>
+				</a>
+			</li>
+			<li>
+				<a href="#" title="Visão Geral">
+					<i></i>
+					<b>Visão Geral</b>
+				</a>
+			</li>
+			<li>
+				<button title="Análises">
+					<i></i>
+					<b>Análises</b>
+					<span></span>
+				</button>
+			</li>
+			<li>
+				<button title="Itens de Projetos">
+					<i></i>
+					<b>Itens de Projetos</b>
+					<span></span>
+				</button>
+			</li>
+		</ul>
+		<section class="charts">
+			<div class="qtd-situacao">
+				<header>
+					<h2>Qtd. por Situação</h2>
+				</header>
+			</div>
+			<div class="alertas">
+				<header>
+					<h2>Alertas</h2>
+				</header>
+				<ul>
+					<li>
+						<h3>Riscos</h3>
+						<data>0</data>
+					</li>
+					<li>
+						<h3>Problemas</h3>
+						<data>2</data>
+					</li>
+					<li>
+						<h3>Tarefas</h3>
+						<data>0</data>
+					</li>
+					<li>
+						<h3>Relatórios de situação</h3>
+						<data>0</data>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</article>
+
+	<section class="grid">
+		<header>
+			<div class="button-panel">
+				<button class="bt-primary md new" title="Novo projeto"><i></i>Novo projeto</button>
+				<span>
+					<button title="Excluir" disabled><i></i>Excluir</button>
+					<button title="Conectar" disabled><i></i>Conectar</button>
+				</span>
+				<span>
+					<button title="Atualizar"><i></i>Atualizar</button>
+					<button title="Agrupar"><i></i>Agrupar</button>
+					<button title="Filtrar"><i></i>Filtrar</button>
+				</span>
+				<span>
+					<button title="Atualizar Situação"><i></i>Atualizar Situação</button>
+					<button title="..."><i></i>...</button>
+				</span>
+			</div>
+
+			<div class="display-options">
+				<label for="display-select">Exibição:</label>
+				<select id="display-select">
+					<option value="modelo-padrao" selected>Modelo padrão</option>
+					<option value="option1">Opção 1</option>
+					<option value="option2">Opção 2</option>
+					<option value="option3">Opção 3</option>
+				</select>
+			</div>
+		</header>
+
+		<!-- <div class="table-wrapper"> -->
+			<table>
+				<tr>
+					<th>
+						<input type="checkbox">
+						<label>Título</label>
+					</th>
+					<th>Situação</th>
+					<th>...</th>
+					<th>...</th>
+					<th>...</th>
+					<th>...</th>
+					<th>...</th>
+					<th>...</th>
+					<th>...</th>
+					<th>...</th>
+					<th>...</th>
+					<th>...</th>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox">
+						<a href="#" title="Projeto Modelo Tradicional">Projeto Modelo Tradicional</a>
+					</td>
+					<td><span>Iniciando</span></td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox">
+						<a href="#" title="Projeto iGantt 0207">Projeto iGantt 0207</a>
+					</td>
+					<td><span>Iniciando</span></td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+				</tr>
+			</table>
+		<!-- </div> -->
+	</section>
+
+</BaseLayout>

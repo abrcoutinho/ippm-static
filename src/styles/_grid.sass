@@ -1,0 +1,165 @@
+@use "variables" as *
+@use "base"
+
+.grid
+	flex: 1
+	min-height: 0
+	padding: 0 1.25rem 1.25rem
+	background-color: var(--neutral_0)
+	border-radius: 1.25rem
+	margin-top: .25rem
+	display: flex
+	flex-direction: column
+
+	& > header
+		display: flex
+		align-items: center
+		justify-content: space-between
+		height: 5.5rem
+
+	.button-panel
+		height: 4.25rem
+		display: flex
+		align-items: center
+		gap: .5rem
+
+		& > span
+			height: 100%
+			box-sizing: border-box
+			border: solid 1px var(--neutral_20)
+			border-radius: .25rem
+			display: flex
+			align-items: center
+			gap: .25rem
+			padding: .5rem
+
+			button
+				max-width: 6rem
+				font-size: .75rem
+				line-height: .75rem
+				font-weight: 600
+				display: -webkit-box
+				-webkit-box-orient: vertical
+				-webkit-line-clamp: 2
+				overflow: hidden
+				text-align: center
+				opacity: .7
+
+				i
+					display: block
+					width: 1.25rem
+					height: 1.25rem
+					background-color: var(--neutral_100)
+					mask-size: contain
+					mask-repeat: no-repeat
+					margin: 0 auto .25rem
+
+				&:hover
+					opacity: 1
+				&[disabled]
+					opacity: .3
+					cursor: default
+
+	[title="Novo projeto"] i
+		mask-image: url("/ippm-static/img/icons/plus.svg")
+	[title="Excluir"] i
+		mask-image: url("/ippm-static/img/icons/garbage.svg")
+	[title="Conectar"] i
+		mask-image: url("/ippm-static/img/icons/plug.svg")
+	[title="Atualizar"] i
+		mask-image: url("/ippm-static/img/icons/refresh.svg")
+	[title="Agrupar"] i
+		mask-image: url("/ippm-static/img/icons/login.svg")
+	[title="Filtrar"] i
+		mask-image: url("/ippm-static/img/icons/filter.svg")
+	[title="Atualizar Situação"] i
+		mask-image: url("/ippm-static/img/icons/default.svg")
+	[title="..."] i
+		mask-image: url("/ippm-static/img/icons/default.svg")
+
+
+
+	.display-options
+		display: flex
+		align-items: center
+		gap: .75rem
+		position: relative
+		&::before
+			content: ''
+			width: 1.5rem
+			height: 1.5rem
+			background-color: var(--neutral_10)
+			position: absolute
+			top: 50%
+			right: 0
+			transform: translateY(-50%)
+			z-index: 1
+		&::after
+			content: ''
+			width: 1.5rem
+			height: 1.5rem
+			background-color: var(--neutral_100)
+			mask-image: url("/ippm-static/img/icons/arrow-down.svg")
+			mask-size: contain
+			mask-repeat: no-repeat
+			position: absolute
+			top: 50%
+			right: 0
+			transform: translateY(-50%)
+			z-index: 2
+
+		label
+			font-size: .85rem
+			font-weight: 600
+		select
+			background-color: var(--neutral_10)
+			height: 2rem
+			line-height: 2rem
+			padding: 0 .75rem
+			border: none
+			border-radius: .5rem
+			outline: none
+			font-size: .85rem
+			font-weight: 600
+			cursor: pointer
+
+			&:hover
+				outline: solid 2px var(--neutral_20)
+			
+
+			
+
+
+	table
+		flex: 1
+		display: block
+		border: solid 1px var(--neutral_20)
+		border-radius: .75rem
+		border-collapse: collapse
+		overflow: auto
+
+		th
+			min-width: 10rem
+			height: 2.75rem
+			text-align: left
+			border: solid 1px var(--neutral_20)
+			background-color: var(--neutral_10)
+			padding: 0 .75rem
+			font-size: .875rem
+
+			&:first-child
+				min-width: 16rem
+		td
+			height: 2.75rem
+			border: solid 1px var(--neutral_20)
+			padding: 0 .75rem
+			font-size: 1rem
+
+		a
+			text-decoration: underline
+			color: var(--neutral_100)
+			&:hover
+				opacity: .7
+
+
+
