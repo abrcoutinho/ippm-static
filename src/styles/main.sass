@@ -23,6 +23,7 @@ body
 	display: flex
 	flex-direction: column
 	gap: 1px
+	overflow: hidden
 
 .main-wrapper
 	flex: 1
@@ -42,4 +43,16 @@ body
 	min-height: 0
 
 
-// @include base.for-size(tablet_lg)
+@media (max-width: 64rem) and  (orientation: landscape)
+	.main
+		display: block
+		overflow-y: auto
+
+@include base.for-size(phone)
+	.app
+		padding: .25rem
+	.main
+		display: block
+		overflow-y: auto
+
+		

@@ -1,4 +1,5 @@
 @use "variables" as *
+@use "base"
 
 .page-index
 	& > article
@@ -10,6 +11,8 @@
 			display: flex
 			background-color: var(--neutral_0)
 			margin-bottom: 1px
+			white-space: nowrap
+			overflow-x: auto
 
 			a, button
 				height: 3rem
@@ -87,6 +90,7 @@
 						flex: 1
 						display: flex
 						gap: .75rem
+						min-height: 0
 						padding: 0 1rem 1rem 1rem
 					li
 						flex: 1
@@ -135,4 +139,51 @@
 							top: 50%
 							right: 0
 							transform: translateY(-50%)
+
+
+
+@include base.for-size(desk_sm)
+	.page-index
+		& > article
+			.charts
+				& > div
+					&.qtd-situacao
+						flex: 0 0 36.36%
+
+
+@include base.for-size(tablet_md)
+	.page-index
+		& > article
+			.charts
+				& > div
+					&.qtd-situacao
+						flex: 0 0 50%
+						border-right: solid 1px var(--neutral_10)
+					&.alertas
+						ul
+							flex-wrap: wrap
+						li
+							flex: 1 0 40%
+						h3
+							font-size: .75rem
+						data
+							font-size: 1.5rem
+							line-height: 1.5rem
+
+
+@include base.for-size(phone)
+	.page-index
+		& > article
+			.tabs
+				a, button
+					padding: 0 1.5rem
+			.charts
+				display: block
+				height: auto
+				& > div
+					&.qtd-situacao
+						flex: initial
+						border-right: none
+						border-bottom: solid 1px var(--neutral_10)
+						min-height: 300px
 

@@ -16,12 +16,14 @@
 		align-items: center
 		justify-content: space-between
 		height: 5.5rem
+		white-space: nowrap
 
 	.button-panel
 		height: 4.25rem
 		display: flex
 		align-items: center
 		gap: .5rem
+		overflow-x: auto
 
 		& > span
 			height: 100%
@@ -163,3 +165,21 @@
 
 
 
+@include base.for-size(tablet_md)
+	.grid
+		& > header
+			flex-wrap: wrap
+			height: auto
+			.button-panel
+				flex: 0 0 100%
+				order: 2
+				padding: .5rem 0 .75rem
+			.display-options
+				flex: 0 0 100%
+				order: 1
+				padding: .75rem 0
+				justify-content: center
+				border-bottom: solid 1px var(--neutral_10)
+				&::before,
+				&::after
+					display: none
