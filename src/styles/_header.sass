@@ -44,7 +44,7 @@
 			line-height: 1rem
 
 
-	.top-right-buttons
+	.top-right
 		display: flex
 		height: 100%
 		align-items: center
@@ -114,6 +114,45 @@
 		display: none
 
 
+	.global-buttons
+		order: 2
+		display: flex
+
+
+	.project-buttons
+		order: 1
+		// display: flex
+		display: none
+		padding-right: 1rem
+		margin-right: 1rem
+		border-right: solid 1px var(--neutral_20)
+
+		button
+			flex: 0 0 2.5rem
+			height: 2.5rem
+			opacity: .7
+			&:hover
+				opacity: 1
+			i
+				flex: 0 0 1.5rem
+				height: 1.5rem
+				background-color: var(--neutral_100)
+				mask-repeat: no-repeat
+				mask-size: contain
+
+		.assistant-bt i
+			mask-image: url("/ippm-static/img/icons/magic-wand.svg")
+		.comment-bt i
+			mask-image: url("/ippm-static/img/icons/comment.svg")
+		.reload-bt i
+			mask-image: url("/ippm-static/img/icons/refresh.svg")
+		.print-bt i
+			mask-image: url("/ippm-static/img/icons/printer.svg")
+
+
+	.dropdown-account
+		display: none
+
 
 @include base.for-size(tablet_lg)
 	.header
@@ -141,6 +180,8 @@
 				mask-repeat: no-repeat
 				mask-size: contain
 
+			&.mob-active i
+				mask-image: url("/ippm-static/img/icons/min.svg")
 
 
 @include base.for-size(phone)

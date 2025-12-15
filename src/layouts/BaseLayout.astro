@@ -11,11 +11,11 @@ const { lang, title, description, pageClass } = Astro.props;
 	lang={lang || 'pt-BR'} data-theme="light" data-contrast="light">
 	<Head title={title} description={description} lang={lang} />
 	<body>
-		<div class="app">
+		<div class={`app ${pageClass}`}>
 			<Header />
 			<div class="main-wrapper">
 				<Menu />
-				<main class={pageClass}>
+				<main class="main">
 					<slot />
 				</main>
 			</div>

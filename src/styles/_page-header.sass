@@ -1,11 +1,46 @@
 @use "variables" as *
+@use "base"
 
 .page-header
 	min-height: 3.5rem
 	display: flex
 	align-items: center
+	
+	.back
+		flex: 0 0 3rem
+		height: 2.5rem
+		background-color: var(--neutral_0)
+		border-radius: .75rem
+		display: flex
+		align-items: center
+		justify-content: center
+
+		i
+			flex: 0 0 1.25rem
+			height: 1.25rem
+			background-color: var(--neutral_100)
+			mask-image: url("/ippm-static/img/icons/back.svg")
+			mask-size: contain
+			mask-repeat: no-repeat
+
+		&:hover
+			opacity: .7
+
 	h1
 		font-size: 2.25rem
 		font-weight: 600
 		line-height: 2.5rem
 		padding: 0 1rem
+	h2
+		font-size: 1rem
+		font-weight: 600
+		line-height: 1.25rem
+		padding: 0 1rem
+		opacity: .6
+
+
+@include base.for-size(phone)
+	.page-header
+		h1
+			font-size: 5vw
+			line-height: 1.75rem

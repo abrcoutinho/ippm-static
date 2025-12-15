@@ -63,11 +63,11 @@
 			&:hover
 				opacity: 1
 
-			&.current
-				background-color: var(--neutral_0)
-				opacity: 1
-				cursor: default
-				box-shadow: 0 1px 2px rgba(0, 0, 0, .15)
+			// &.current
+			// 	background-color: var(--neutral_0)
+			// 	opacity: 1
+			// 	cursor: default
+			// 	box-shadow: 0 1px 2px rgba(0, 0, 0, .15)
 
 			& > i
 				flex: 0 0 1.25rem
@@ -259,14 +259,50 @@
 
 
 
+// current page menu marker
+.page-index .menu > ul li:first-child a,
+.page-project .menu > ul li:nth-child(2) a
+	background-color: var(--neutral_0)
+	opacity: 1
+	cursor: default
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .15)
+
 
 
 
 @include base.for-size(tablet_lg)
 	.menu
+		width: 22rem
 		position: fixed
-		top: 0
-		left: -999px
+		top: 5rem
+		left: -23rem
 		z-index: 5
-		height: 100dvh
+		height: calc(100dvh - 5.75rem)
 		background-color: var(--neutral_10)
+		border-radius: 0 0 0 1.75rem
+		box-shadow: 1rem 0.5rem 2rem rgba(0, 0, 0, .2)
+		padding-top: 2.5rem
+
+		&.mob-active
+			transition: left 1s $ease
+			left: .75rem
+
+		header
+			display: none
+
+		li
+			height: 3rem
+
+
+
+@include base.for-size(phone)
+	.menu
+		width: 80vw
+		top: 4.25rem
+		height: calc(100dvh - 4.75rem)
+		left: -110vw
+
+		&.mob-active
+			left: .25rem
+
+

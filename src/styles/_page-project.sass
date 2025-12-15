@@ -1,0 +1,581 @@
+@use "variables" as *
+@use "base"
+
+.page-project
+	.main
+		overflow-y: auto
+
+		.project-menu
+			flex: 0 0 3rem
+			display: flex
+			gap: .12rem
+			white-space: nowrap
+			overflow-x: auto
+			margin: .75rem 0 .25rem
+
+			& > li
+				flex: 1
+
+				button
+					width: 100%
+					height: 100%
+					background-color: var(--neutral_0)
+					border-radius: .75rem
+					box-sizing: border-box
+					display: flex
+					gap: .5rem
+					align-items: center
+					padding: 0 .75rem
+					font-size: .9rem
+					font-weight: 400
+					line-height: 1.25rem
+
+					&:hover
+						opacity: .7
+
+					i
+						flex: 0 0 1.25rem
+						height: 1.25rem
+						background-color: var(--neutral_100)
+						mask-size: contain
+						mask-repeat: no-repeat
+						outline: solid 1px red
+
+					u
+						text-decoration: none
+						flex: 1
+						text-align: left
+
+					& > span
+						flex: 0 0 1rem
+						height: 1rem
+						background-color: var(--neutral_100)
+						mask-size: contain
+						mask-repeat: no-repeat
+						mask-image: url("/ippm-static/img/icons/up-down.svg")
+
+			[title="Projeto"] i
+				mask-image: url("/ippm-static/img/icons/bar-chart.svg")
+			[title="Comunicação"] i
+				mask-image: url("/ippm-static/img/icons/megaphone.svg")
+			[title="Escopo"] i
+				mask-image: url("/ippm-static/img/icons/badge.svg")
+			[title="Cronograma"] i
+				mask-image: url("/ippm-static/img/icons/calendar.svg")
+			[title="Recursos"] i
+				mask-image: url("/ippm-static/img/icons/account-box.svg")
+			[title="Riscos e Problemas"] i
+				mask-image: url("/ippm-static/img/icons/alert.svg")
+			[title="Bibliotecas"] i
+				mask-image: url("/ippm-static/img/icons/folder.svg")
+
+
+		.content
+			display: flex
+			gap: .25rem
+
+			section
+				flex: 1
+				min-width: 0
+				display: flex
+				flex-direction: column
+				gap: .25rem
+
+				article
+					background-color: var(--neutral_0)
+					border-radius: 1.25rem
+					box-sizing: border-box
+					padding: 1.25rem
+
+					header
+						display: flex
+						align-items: center
+						gap: .75rem
+
+					i
+						flex: 0 0 1rem
+						height: 1rem
+						background-color: var(--neutral_100)
+						mask-size: contain
+						mask-repeat: no-repeat
+
+					h3
+						flex: 1
+						font-size: 1.25rem
+						font-weight: 600
+						line-height: 1.5rem
+						color: var(--brand)
+
+					button
+						flex: 0 0 2.5rem
+						height: 2.5rem
+						background-color: var(--neutral_10)
+						border-radius: .75rem
+						display: flex
+						align-items: center
+						justify-content: center
+
+						&:hover
+							opacity: .7
+
+					&[data-info="info"]
+						display: flex
+						flex-direction: column
+						gap: 1.5rem
+						overflow: hidden
+						max-height: 12rem
+
+						&.active
+							max-height: 9999px
+							header:first-of-type button i
+								mask-image: url("/ippm-static/img/icons/min.svg")
+
+						header:first-of-type
+							& > i
+								mask-image: url("/ippm-static/img/icons/info.svg")
+							button i
+								mask-image: url("/ippm-static/img/icons/max.svg")
+
+						header:nth-of-type(2)
+							& > i
+								mask-image: url("/ippm-static/img/icons/default.svg")
+
+						dl
+							display: flex
+							flex-wrap: wrap
+
+							dt
+								flex: 0 0 50%
+								height: 2.75rem
+								background-color: var(--neutral_10)
+								display: flex
+								align-items: center
+								gap: .5rem
+								box-sizing: border-box
+								padding: 0 .75rem
+								font-size: .9rem
+								font-weight: 700
+								border-bottom: solid 1px var(--neutral_20)
+								min-width: 0
+								white-space: nowrap
+								overflow: hidden
+								text-overflow: ellipsis
+
+							dd
+								flex: 0 0 50%
+								height: 2.75rem
+								display: flex
+								align-items: center
+								gap: .5rem
+								box-sizing: border-box
+								padding: 0 .75rem
+								font-size: .9rem
+								border-bottom: solid 1px var(--neutral_20)
+								min-width: 0
+								white-space: nowrap
+								overflow: hidden
+								text-overflow: ellipsis
+
+
+							[title="Situação"] i
+								mask-image: url("/ippm-static/img/icons/tag.svg")
+							[title="Gestor(a)"] i
+								mask-image: url("/ippm-static/img/icons/profile.svg")
+							[title="Patrocinador(a)"] i
+								mask-image: url("/ippm-static/img/icons/crew.svg")
+							[title="Início"] i
+								mask-image: url("/ippm-static/img/icons/calendar-round.svg")
+							[title="Término"] i
+								mask-image: url("/ippm-static/img/icons/calendar-round.svg")
+							[title="Departamento"] i
+								mask-image: url("/ippm-static/img/icons/hierarchy.svg")
+							[title="Tipo de Projeto"] i
+								mask-image: url("/ippm-static/img/icons/bar-chart.svg")
+							[title="Método"] i
+								mask-image: url("/ippm-static/img/icons/method.svg")
+							[title="Data de Status"] i
+								mask-image: url("/ippm-static/img/icons/calendar-round.svg")
+							[title="Última Publicação"] i
+								mask-image: url("/ippm-static/img/icons/calendar-round.svg")
+
+							[title="LB Selecionada"] i
+								mask-image: url("/ippm-static/img/icons/default.svg")
+							[title="Duração"] i
+								mask-image: url("/ippm-static/img/icons/timeline.svg")
+							[title="Trabalho da LB"] i
+								mask-image: url("/ippm-static/img/icons/clock.svg")
+							[title="Custo da LB"] i
+								mask-image: url("/ippm-static/img/icons/money.svg")
+
+
+					&[data-info="events"]
+						header
+							& > i
+								mask-image: url("/ippm-static/img/icons/calendar-star.svg")
+							button i
+								mask-image: url("/ippm-static/img/icons/external-link.svg")
+						.empty
+							border: solid 1px var(--neutral_10)
+							border-radius: .75rem
+							padding: 1.25rem
+							margin-top: 1.25rem
+
+
+					&[data-info="summary"]
+						header
+							& > i
+								mask-image: url("/ippm-static/img/icons/summary.svg")
+							span
+								font-size: .8rem
+								display: flex
+								align-items: center
+								gap: .5rem
+								i
+									mask-image: url("/ippm-static/img/icons/calendar-round.svg")
+						& > div
+							border: solid 1px var(--neutral_10)
+							border-radius: .75rem
+							margin-top: 1.25rem
+
+							dl
+								border-bottom: solid 1px var(--neutral_10)
+								padding-bottom: 1.25rem
+								list-style-type: circle
+							dt
+								padding: 1.25rem
+								font-size: 1.15rem
+								font-weight: 300
+							dd
+								padding: .5rem 1.75rem .5rem 2.5rem
+								font-size: .875rem
+								line-height: 1.25rem
+								position: relative
+
+								&::before
+									content: ''
+									width: .3rem
+									height: .3rem
+									background-color: var(--neutral_100)
+									border-radius: 100%
+									position: absolute
+									top: 1rem
+									left: 1.25rem
+
+			aside
+				flex: 1
+				min-width: 0
+				background-color: var(--neutral_0)
+				border-radius: 1.25rem
+				box-sizing: border-box
+				padding: 1.25rem
+
+				.general-data
+					display: flex
+					gap: .25rem
+
+					li
+						flex: 1
+						min-width: 0
+
+						&:first-child .display
+							background-color: #7EAFB4
+						&:nth-child(2) .display
+							background-color: #A1A431
+						&:nth-child(3) .display
+							background-color: #89A076
+
+					.display
+						border-radius: .75rem
+						padding: .5rem .75rem .75rem
+						color: var(--neutral_0)
+
+						h3
+							font-size: 1.15rem
+							font-weight: 700
+							line-height: 1.5rem
+							margin-bottom: .5rem
+						data
+							display: block
+							font-size: 2.5rem
+							font-weight: 500
+							line-height: 2.5rem
+							overflow: hidden
+							white-space: nowrap
+							text-overflow: ellipsis
+						small
+							display: block
+							font-size: .875rem
+							font-weight: 900
+							line-height: 1.25rem
+
+					.pointer
+						margin-top: 2rem
+						height: 12rem
+						outline: solid 1px red
+
+
+				.diagnostic
+					display: flex
+					gap: .25rem
+					margin-top: 2rem
+
+					li
+						flex: 1
+						min-width: 0
+						background-color: var(--neutral_10)
+						border-radius: .5rem
+						outline: solid 1px var(--neutral_20)
+
+						header
+							height: 2.5rem
+							padding: 0 .75rem
+							display: flex
+							align-items: center
+							gap: .7rem
+							font-size: 1rem
+							font-weight: 800
+
+							i
+								flex: 0 0 1rem
+								height: 1rem
+								background-color: var(--neutral_100)
+								mask-image: url("/ippm-static/img/icons/info.svg")
+								mask-size: contain
+								mask-repeat: no-repeat
+
+						& > div
+							background-color: var(--neutral_0)
+							height: 5rem
+							display: flex
+							align-items: center
+							justify-content: center
+							gap: .75rem
+							font-size: .875rem
+
+							i
+								flex: 0 0 2rem
+								height: 2rem
+								background-color: #FA7E7E
+								mask-image: url("/ippm-static/img/icons/close-circle.svg")
+								mask-size: contain
+								mask-repeat: no-repeat
+						h4
+							font-size: .75rem
+							line-height: 1rem
+							padding: .5rem .75rem .25rem
+							text-transform: uppercase
+							font-weight: 500
+							overflow: hidden
+							white-space: nowrap
+							text-overflow: ellipsis
+
+						footer
+							padding: 0 .75rem .5rem
+							display: flex
+							align-items: center
+							justify-content: space-between
+
+							data
+								font-size: 1.75rem
+								line-height: 1.75rem
+								font-weight: 600
+							small
+								font-size: .875rem
+								line-height: 1.75rem
+								font-weight: 600
+
+
+
+
+
+				.alertas
+					display: flex
+					gap: .25rem
+					margin-top: 2rem
+
+					ul
+						flex: 1
+						display: flex
+						gap: .75rem
+						min-height: 0
+						padding: 0 1rem 1rem 1rem
+					li
+						flex: 1
+						border-radius: .75rem
+						padding: .75rem
+						display: flex
+						flex-direction: column
+						justify-content: space-between
+						color: var(--neutral_0)
+
+						&:first-child
+							background-color: var(--salmon)
+							data::after
+								mask-image: url("/ippm-static/img/icons/alert.svg")
+						&:nth-child(2)
+							background-color: var(--lightpurple)
+							data::after
+								mask-image: url("/ippm-static/img/icons/spam.svg")
+						&:nth-child(3)
+							background-color: var(--aquamarine)
+							data::after
+								mask-image: url("/ippm-static/img/icons/calendar-check.svg")
+						&:nth-child(4)
+							background-color: var(--darkseagreen)
+							data::after
+								mask-image: url("/ippm-static/img/icons/file-chart.svg")
+					h3
+						font-size: 1.12rem
+						line-height: 1.12rem
+						font-weight: 900
+
+					data
+						font-size: 2.5rem
+						line-height: 2.5rem
+						font-weight: 600
+						position: relative
+
+						&::after
+							content: ''
+							width: 1.5rem
+							height: 1.5rem
+							background-color: var(--neutral_0)
+							mask-size: contain
+							mask-repeat: no-repeat
+							position: absolute
+							top: 50%
+							right: 0
+							transform: translateY(-50%)
+
+
+
+
+
+
+		.timeline
+			background-color: var(--neutral_0)
+			border-radius: 1.25rem
+			margin-top: 2rem
+			border: solid 1px var(--neutral_20)
+
+			header
+				display: flex
+				align-items: center
+				gap: .75rem
+				padding: .75rem .75rem .75rem 1.25rem
+
+				i
+					flex: 0 0 1rem
+					height: 1rem
+					background-color: var(--neutral_100)
+					mask-size: contain
+					mask-repeat: no-repeat
+				& > i
+					mask-image: url("/ippm-static/img/icons/clock.svg")
+				h3
+					flex: 1
+					font-size: 1.25rem
+					font-weight: 600
+					line-height: 1.5rem
+					color: var(--brand)
+				button
+					flex: 0 0 2.5rem
+					height: 2.5rem
+					background-color: var(--neutral_10)
+					border-radius: .75rem
+					display: flex
+					align-items: center
+					justify-content: center
+
+					i
+						mask-image: url("/ippm-static/img/icons/external-link.svg")
+
+					&:hover
+						opacity: .7
+
+	.project-buttons
+		display: flex
+
+
+@include base.for-size(tablet_lg)
+	.page-project
+		.main
+			.content
+				aside
+					.alertas
+						flex-wrap: wrap
+						gap: .75rem
+						li
+							flex: 1 0 40%
+						h3
+							font-size: .75rem
+						data
+							font-size: 1.5rem
+							line-height: 1.5rem
+
+
+@include base.for-size(tablet_md)
+	.page-project
+		.project-buttons
+			display: none
+
+		.main
+			.content
+				section
+					article
+						h3
+							font-size: 2vw
+						&[data-info=info]
+							dl
+								dt
+									font-size: 1.5vw
+								dd
+									font-size: 1.5vw
+				aside
+					.diagnostic
+						flex-wrap: wrap
+						gap: .5rem
+						li
+							flex: 0 0 calc(50% - .25rem)
+			.timeline
+				header
+					h3
+						font-size: 2vw
+
+
+@include base.for-size(phone)
+	.page-project
+		.main
+			.project-menu
+				flex-wrap: wrap
+				& > li
+					flex: 0 0 calc(50% - .12rem)
+					min-width: 0
+					height: 2.25rem
+		
+			.content
+				flex-direction: column
+
+				section
+					article
+						h3
+							font-size: 4vw
+						&[data-info=info]
+							dl
+								dt
+									font-size: 3vw
+								dd
+									font-size: 3vw
+
+				aside
+					.general-data
+						.display
+							h3
+								font-size: 3.5vw
+							data
+								font-size: 6vw
+			.timeline
+				header
+					h3
+						font-size: 4vw
+

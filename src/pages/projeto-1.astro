@@ -1,0 +1,263 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Projeto 1" pageClass="main page-project" description="Soluções Completas para Escritórios de Projetos (PMOs)">
+
+	<header class="page-header">
+		<a href={`${import.meta.env.BASE_URL}`} class="back" title="Início"><i></i></a>
+		<hgroup>
+			<h1>Projeto 1</h1>
+			<h2>Resumo do projeto</h2>
+		</hgroup>
+	</header>
+
+	<ul class="project-menu">
+		<li>
+			<button title="Projeto"><i></i><u>Projeto</u><span></span></button>
+		</li>
+		<li>
+			<button title="Comunicação"><i></i><u>Comunicação</u><span></span></button>
+		</li>
+		<li>
+			<button title="Escopo"><i></i><u>Escopo</u><span></span></button>
+		</li>
+		<li>
+			<button title="Cronograma"><i></i><u>Cronograma</u><span></span></button>
+		</li>
+		<li>
+			<button title="Recursos"><i></i><u>Recursos</u><span></span></button>
+		</li>
+		<li>
+			<button title="Riscos e Problemas"><i></i><u>Riscos e Problemas</u><span></span></button>
+		</li>
+		<li>
+			<button title="Bibliotecas"><i></i><u>Bibliotecas</u><span></span></button>
+		</li>
+	</ul>
+
+	<div class="content">
+		<section>
+			<article data-info="info">
+				<header>
+					<i></i>
+					<h3>Informações do projeto</h3>
+					<button title="Expandir/Ocultar"><i></i></button>
+				</header>
+				<dl>
+					<dt title="Situação"><i></i>Situação:</dt>
+					<dd>Iniciando</dd>
+					<dt title="Gestor(a)"><i></i>Gestor(a):</dt>
+					<dd>Felipe F.</dd>
+					<dt title="Patrocinador(a)"><i></i>Patrocinador(a):</dt>
+					<dd>José S.</dd>
+					<dt title="Início"><i></i>Início:</dt>
+					<dd>1 mar 2023</dd>
+					<dt title="Término"><i></i>Término:</dt>
+					<dd>25 jun 2026</dd>
+					<dt title="Departamento"><i></i>Departamento:</dt>
+					<dd>Atendimento ao Cliente</dd>
+					<dt title="Tipo de Projeto"><i></i>Tipo de Projeto:</dt>
+					<dd>Engenharia</dd>
+					<dt title="Método"><i></i>Método:</dt>
+					<dd>Tradicional</dd>
+					<dt title="Data de Status"><i></i>Data de Status:</dt>
+					<dd>24 nov 2023</dd>
+					<dt title="Última Publicação"><i></i>Última Publicação:</dt>
+					<dd>24 nov 2023<time>13:10</time></dd>
+				</dl>
+				<header>
+					<i></i>
+					<h3>Linha de Base</h3>
+				</header>
+				<dl>
+					<dt title="LB Selecionada"><i></i>LB Selecionada:</dt>
+					<dd>Linha de base 1</dd>
+					<dt title="Início"><i></i>Início:</dt>
+					<dd>1 mar 2023</dd>
+					<dt title="Término"><i></i>Término:</dt>
+					<dd>25 jun 2025</dd>
+					<dt title="Duração"><i></i>Duração:</dt>
+					<dd>16 dias</dd>
+					<dt title="Trabalho da LB"><i></i>Trabalho da LB:</dt>
+					<dd>0h</dd>
+					<dt title="Custo da LB"><i></i>Custo da LB:</dt>
+					<dd>R$3.000,00</dd>
+				</dl>
+			</article>
+
+			<article data-info="events">
+				<header>
+					<i></i>
+					<h3>Eventos hoje</h3>
+					<button title="Abrir"><i></i></button>
+				</header>
+				<p class="empty">Não há eventos para hoje.</p>
+			</article>
+
+			<article data-info="summary">
+				<header>
+					<i></i>
+					<h3>Resumo Executivo</h3>
+					<span><i></i>até 28 fev 2025</span>
+				</header>
+				<div>
+					<dl>
+						<dt>Fatos relevantes do período</dt>
+						<dd>Avanço 1</dd>
+						<dd>Avanço 2</dd>
+						<dd>Avanço 3</dd>
+					</dl>
+					<dl>
+						<dt>Fatos relevantes do próximo período</dt>
+						<dd>Próxima ação 1</dd>
+						<dd>Próxima ação 2</dd>
+						<dd>Próxima ação 3</dd>
+					</dl>
+					<dl>
+						<dt>Riscos e preocupações</dt>
+						<dd>Ponto de atenção 1</dd>
+						<dd>Ponto de atenção 2</dd>
+						<dd>Ponto de atenção 3</dd>
+					</dl>
+				</div>
+			</article>
+
+		</section>
+		<aside>
+			
+			<ul class="general-data">
+				<li>
+					<div class="display">
+						<h3>Duração</h3>
+						<data>319,0</data>
+						<small>dias</small>
+					</div>
+					<div class="pointer">
+						<!-- PONTEIRO -->
+					</div>
+				</li>
+				<li>
+					<div class="display">
+						<h3>Trabalho</h3>
+						<data>200,0</data>
+						<small>horas</small>
+					</div>
+					<div class="pointer">
+						<!-- PONTEIRO -->
+					</div>
+				</li>
+				<li>
+					<div class="display">
+						<h3>Custo R$</h3>
+						<data>305,2</data>
+						<small>mil</small>
+					</div>
+					<div class="pointer">
+						<!-- PONTEIRO -->
+					</div>
+				</li>
+			</ul>
+
+			<ul class="diagnostic">
+				<li>
+					<header><h3>IVD</h3><i></i></header>
+					<div><i></i>Sem LB</div>
+					<h4>Var. duração</h4>
+					<footer><data>319</data><small>dias</small></footer>
+				</li>
+				<li>
+					<header><h3>IVT</h3><i></i></header>
+					<div><i></i>Sem LB</div>
+					<h4>Var. trabalho</h4>
+					<footer><data>0</data><small>horas</small></footer>
+				</li>
+				<li>
+					<header><h3>IVC</h3><i></i></header>
+					<div><i></i>Sem LB</div>
+					<h4>Var. custos</h4>
+					<footer><data>0,00</data></footer>
+				</li>
+				<li>
+					<header><h3>ISA</h3><i></i></header>
+					<div><i></i>Sem LB</div>
+					<h4>% Planejado</h4>
+					<footer><data>0,00%</data></footer>
+				</li>
+			</ul>
+
+			<ul class="alertas">
+				<li>
+					<h3>Riscos</h3>
+					<data>0</data>
+				</li>
+				<li>
+					<h3>Problemas</h3>
+					<data>2</data>
+				</li>
+				<li>
+					<h3>Tarefas</h3>
+					<data>0</data>
+				</li>
+				<li>
+					<h3>Relatórios de situação</h3>
+					<data>0</data>
+				</li>
+			</ul>
+
+			<article class="timeline">
+				<header>
+					<i></i>
+					<h3>Linha do Tempo</h3>
+					<button title="Abrir"><i></i></button>
+				</header>
+			</article>
+
+		</aside>
+	</div>
+
+</BaseLayout>
+
+
+<script>
+
+// Show/hide info section
+const infoSection = document.querySelector('[data-info="info"]');
+const infoButton = document.querySelector('[data-info="info"] header button');
+infoButton.addEventListener('click', () => {
+    infoSection.classList.toggle('active');
+});
+
+
+// project-menu dragabble
+const projectMenu = document.querySelector('.project-menu');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+projectMenu.addEventListener('mousedown', (e) => {
+  isDown = true;
+  projectMenu.classList.add('active');
+  startX = e.pageX - projectMenu.offsetLeft;
+  scrollLeft = projectMenu.scrollLeft;
+});
+
+projectMenu.addEventListener('mouseleave', () => {
+  isDown = false;
+});
+
+projectMenu.addEventListener('mouseup', () => {
+  isDown = false;
+});
+
+projectMenu.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - projectMenu.offsetLeft;
+  const walk = (x - startX) * 1; // velocidade do drag
+  projectMenu.scrollLeft = scrollLeft - walk;
+});
+
+
+</script>

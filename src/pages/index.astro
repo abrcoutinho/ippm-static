@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Ingty iPPM" pageClass="main page-index" description="Soluções Completas para Escritórios de Projetos (PMOs)">
+<BaseLayout title="Ingty iPPM" pageClass="page-index" description="Soluções Completas para Escritórios de Projetos (PMOs)">
 
 	<header class="page-header">
 		<h1>Projetos</h1>
@@ -121,7 +121,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				<tr>
 					<td>
 						<input type="checkbox">
-						<a href="#" title="Projeto 1">Projeto 1</a>
+						<a href={`${import.meta.env.BASE_URL}projeto-1`} title="Projeto 1">Projeto 1</a>
 					</td>
 					<td><span>Iniciando</span></td>
 					<td>...</td>

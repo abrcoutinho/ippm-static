@@ -2,188 +2,192 @@
 @use "base"
 
 .page-index
-	& > article
-		border-radius: 1.25rem
-		margin-top: .75rem
-		overflow: hidden
+	.main
+		& > article
+			border-radius: 1.25rem
+			margin-top: .75rem
+			overflow: hidden
 
-		.tabs
-			display: flex
-			background-color: var(--neutral_0)
-			margin-bottom: 1px
-			white-space: nowrap
-			overflow-x: auto
+			.tabs
+				display: flex
+				background-color: var(--neutral_0)
+				margin-bottom: 1px
+				white-space: nowrap
+				overflow-x: auto
 
-			a, button
-				height: 3rem
+				a, button
+					height: 3rem
+					box-sizing: border-box
+					display: flex
+					gap: .5rem
+					align-items: center
+					padding: 0 2.5rem
+					color: var(--neutral_100)
+					font-size: .9rem
+					font-weight: 400
+					line-height: 1.25rem
+
+					&:hover
+						border-bottom: solid 0.188rem color-mix(in srgb, var(--brand) 20%, rgba(255,255,255,.2))
+
+					&.current
+						cursor: default
+						border-bottom: solid 0.188rem var(--brand)
+
+					i
+						flex: 0 0 1.25rem
+						height: 1.25rem
+						background-color: var(--neutral_100)
+						mask-size: contain
+						mask-repeat: no-repeat
+
+					& > span
+						flex: 0 0 1rem
+						height: 1rem
+						background-color: var(--neutral_100)
+						mask-size: contain
+						mask-repeat: no-repeat
+						mask-image: url("/ippm-static/img/icons/up-down.svg")
+
+				[title="Projetos"] > i
+					mask-image: url("/ippm-static/img/icons/bar-chart.svg")
+				[title="Visão Geral"] > i
+					mask-image: url("/ippm-static/img/icons/globe.svg")
+				[title="Análises"] > i
+					mask-image: url("/ippm-static/img/icons/line-chart.svg")
+				[title="Itens de Projetos"] > i
+					mask-image: url("/ippm-static/img/icons/bubble-chart.svg")
+
+
+
+
+			.charts
+				height: 13.25rem
 				box-sizing: border-box
 				display: flex
-				gap: .5rem
-				align-items: center
-				padding: 0 2.5rem
-				color: var(--neutral_100)
-				font-size: .9rem
-				font-weight: 400
-				line-height: 1.25rem
+				background-color: var(--neutral_0)
 
-				&:hover
-					border-bottom: solid 0.188rem color-mix(in srgb, var(--brand) 20%, rgba(255,255,255,.2))
-
-				&.current
-					cursor: default
-					border-bottom: solid 0.188rem var(--brand)
-
-				i
-					flex: 0 0 1.25rem
-					height: 1.25rem
-					background-color: var(--neutral_100)
-					mask-size: contain
-					mask-repeat: no-repeat
-
-				& > span
-					flex: 0 0 1rem
-					height: 1rem
-					background-color: var(--neutral_100)
-					mask-size: contain
-					mask-repeat: no-repeat
-					mask-image: url("/ippm-static/img/icons/up-down.svg")
-
-			[title="Projetos"] > i
-				mask-image: url("/ippm-static/img/icons/bar-chart.svg")
-			[title="Visão Geral"] > i
-				mask-image: url("/ippm-static/img/icons/globe.svg")
-			[title="Análises"] > i
-				mask-image: url("/ippm-static/img/icons/line-chart.svg")
-			[title="Itens de Projetos"] > i
-				mask-image: url("/ippm-static/img/icons/bubble-chart.svg")
-
-
-
-
-		.charts
-			height: 13.25rem
-			box-sizing: border-box
-			display: flex
-			background-color: var(--neutral_0)
-
-			& > div
-				display: flex
-				flex-direction: column
-
-				header
-					height: 2.5rem
-					padding: 0 1rem
+				& > div
 					display: flex
-					align-items: center
-				h2
-					font-size: .9rem
-					font-weight: 900
-					text-transform: uppercase
+					flex-direction: column
 
-				&.qtd-situacao
-					flex: 0 0 41.67%
-
-				&.alertas
-					flex: 1
-
-					ul
-						flex: 1
+					header
+						height: 2.5rem
+						padding: 0 1rem
 						display: flex
-						gap: .75rem
-						min-height: 0
-						padding: 0 1rem 1rem 1rem
-					li
-						flex: 1
-						border-radius: .75rem
-						padding: .75rem
-						display: flex
-						flex-direction: column
-						justify-content: space-between
-						color: white
-
-						&:first-child
-							background-color: var(--salmon)
-							data::after
-								mask-image: url("/ippm-static/img/icons/alert.svg")
-						&:nth-child(2)
-							background-color: var(--lightpurple)
-							data::after
-								mask-image: url("/ippm-static/img/icons/spam.svg")
-						&:nth-child(3)
-							background-color: var(--aquamarine)
-							data::after
-								mask-image: url("/ippm-static/img/icons/calendar-check.svg")
-						&:nth-child(4)
-							background-color: var(--darkseagreen)
-							data::after
-								mask-image: url("/ippm-static/img/icons/file-chart.svg")
-					h3
-						font-size: 1.12rem
-						line-height: 1.12rem
+						align-items: center
+					h2
+						font-size: .9rem
 						font-weight: 900
+						text-transform: uppercase
 
-					data
-						font-size: 2.5rem
-						line-height: 2.5rem
-						font-weight: 600
-						position: relative
+					&.qtd-situacao
+						flex: 0 0 41.67%
 
-						&::after
-							content: ''
-							width: 1.5rem
-							height: 1.5rem
-							background-color: white
-							mask-size: contain
-							mask-repeat: no-repeat
-							position: absolute
-							top: 50%
-							right: 0
-							transform: translateY(-50%)
+					&.alertas
+						flex: 1
+
+						ul
+							flex: 1
+							display: flex
+							gap: .75rem
+							min-height: 0
+							padding: 0 1rem 1rem 1rem
+						li
+							flex: 1
+							border-radius: .75rem
+							padding: .75rem
+							display: flex
+							flex-direction: column
+							justify-content: space-between
+							color: white
+
+							&:first-child
+								background-color: var(--salmon)
+								data::after
+									mask-image: url("/ippm-static/img/icons/alert.svg")
+							&:nth-child(2)
+								background-color: var(--lightpurple)
+								data::after
+									mask-image: url("/ippm-static/img/icons/spam.svg")
+							&:nth-child(3)
+								background-color: var(--aquamarine)
+								data::after
+									mask-image: url("/ippm-static/img/icons/calendar-check.svg")
+							&:nth-child(4)
+								background-color: var(--darkseagreen)
+								data::after
+									mask-image: url("/ippm-static/img/icons/file-chart.svg")
+						h3
+							font-size: 1.12rem
+							line-height: 1.12rem
+							font-weight: 900
+
+						data
+							font-size: 2.5rem
+							line-height: 2.5rem
+							font-weight: 600
+							position: relative
+
+							&::after
+								content: ''
+								width: 1.5rem
+								height: 1.5rem
+								background-color: white
+								mask-size: contain
+								mask-repeat: no-repeat
+								position: absolute
+								top: 50%
+								right: 0
+								transform: translateY(-50%)
 
 
 
 @include base.for-size(desk_sm)
 	.page-index
-		& > article
-			.charts
-				& > div
-					&.qtd-situacao
-						flex: 0 0 36.36%
+		.main
+			& > article
+				.charts
+					& > div
+						&.qtd-situacao
+							flex: 0 0 36.36%
 
 
 @include base.for-size(tablet_md)
 	.page-index
-		& > article
-			.charts
-				& > div
-					&.qtd-situacao
-						flex: 0 0 50%
-						border-right: solid 1px var(--neutral_10)
-					&.alertas
-						ul
-							flex-wrap: wrap
-						li
-							flex: 1 0 40%
-						h3
-							font-size: .75rem
-						data
-							font-size: 1.5rem
-							line-height: 1.5rem
+		.main
+			& > article
+				.charts
+					& > div
+						&.qtd-situacao
+							flex: 0 0 50%
+							border-right: solid 1px var(--neutral_10)
+						&.alertas
+							ul
+								flex-wrap: wrap
+							li
+								flex: 1 0 40%
+							h3
+								font-size: .75rem
+							data
+								font-size: 1.5rem
+								line-height: 1.5rem
 
 
 @include base.for-size(phone)
 	.page-index
-		& > article
-			.tabs
-				a, button
-					padding: 0 1.5rem
-			.charts
-				display: block
-				height: auto
-				& > div
-					&.qtd-situacao
-						flex: initial
-						border-right: none
-						border-bottom: solid 1px var(--neutral_10)
-						min-height: 300px
+		.main
+			& > article
+				.tabs
+					a, button
+						padding: 0 1.5rem
+				.charts
+					display: block
+					height: auto
+					& > div
+						&.qtd-situacao
+							flex: initial
+							border-right: none
+							border-bottom: solid 1px var(--neutral_10)
+							min-height: 300px
 

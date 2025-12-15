@@ -7,7 +7,7 @@
 
 	<ul>
 		<li>
-			<a href="#" title="Início" class="current">
+			<a href={`${import.meta.env.BASE_URL}`} title="Início">
 				<i></i>
 				<b>Início</b>
 			</a>
@@ -101,12 +101,36 @@
 
 <script>
 
-// Show/hide menu
+// Show/hide menu on desktop
 const button = document.querySelector('.show-hide');
 const menu = document.querySelector('.menu');
 button.addEventListener('click', () => {
-    menu.classList.toggle('closed');
+  menu.classList.toggle('closed');
 });
+
+	// remove 'closed' on small viewport
+function verificarViewport() {
+  if (!menu) return;
+
+  if (window.innerWidth <= 1024) {
+    menu.classList.remove('closed');
+  }
+}
+verificarViewport();
+window.addEventListener('resize', verificarViewport);
+
+	// Show/hide menu on mobile
+document.addEventListener('DOMContentLoaded', function () {
+  const menuBt = document.querySelector('.menu-bt');
+
+  if (menu && menuBt) {
+    menuBt.addEventListener('click', function () {
+      menu.classList.toggle('mob-active');
+      menuBt.classList.toggle('mob-active');
+    });
+  }
+});
+
 
 // Color theme
 const switchTheme = document.getElementById('switch_theme');
