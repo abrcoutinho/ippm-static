@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectMenu from '../components/ProjectMenu.astro';
 ---
 
 <BaseLayout title="Projeto 1" pageClass="page-project" description="Soluções Completas para Escritórios de Projetos (PMOs)">
@@ -12,29 +13,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		</hgroup>
 	</header>
 
-	<ul class="project-menu">
-		<li>
-			<button title="Projeto"><i></i><u>Projeto</u><span></span></button>
-		</li>
-		<li>
-			<button title="Comunicação"><i></i><u>Comunicação</u><span></span></button>
-		</li>
-		<li>
-			<button title="Escopo"><i></i><u>Escopo</u><span></span></button>
-		</li>
-		<li>
-			<button title="Cronograma"><i></i><u>Cronograma</u><span></span></button>
-		</li>
-		<li>
-			<button title="Recursos"><i></i><u>Recursos</u><span></span></button>
-		</li>
-		<li>
-			<button title="Riscos e Problemas"><i></i><u>Riscos e Problemas</u><span></span></button>
-		</li>
-		<li>
-			<button title="Bibliotecas"><i></i><u>Bibliotecas</u><span></span></button>
-		</li>
-	</ul>
+	<ProjectMenu />
 
 	<div class="content">
 		<section>

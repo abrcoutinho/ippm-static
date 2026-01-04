@@ -5,71 +5,6 @@
 	.main
 		overflow-y: auto
 
-		.project-menu
-			flex: 0 0 3rem
-			display: flex
-			gap: .12rem
-			white-space: nowrap
-			overflow-x: auto
-			margin: .75rem 0 .25rem
-
-			& > li
-				flex: 1
-
-				button
-					width: 100%
-					height: 100%
-					background-color: var(--neutral_0)
-					border-radius: .75rem
-					box-sizing: border-box
-					display: flex
-					gap: .5rem
-					align-items: center
-					padding: 0 .75rem
-					font-size: .9rem
-					font-weight: 400
-					line-height: 1.25rem
-
-					&:hover
-						opacity: .7
-
-					i
-						flex: 0 0 1.25rem
-						height: 1.25rem
-						background-color: var(--neutral_100)
-						mask-size: contain
-						mask-repeat: no-repeat
-						outline: solid 1px red
-
-					u
-						text-decoration: none
-						flex: 1
-						text-align: left
-
-					& > span
-						flex: 0 0 1rem
-						height: 1rem
-						background-color: var(--neutral_100)
-						mask-size: contain
-						mask-repeat: no-repeat
-						mask-image: url("/ippm-static/img/icons/up-down.svg")
-
-			[title="Projeto"] i
-				mask-image: url("/ippm-static/img/icons/bar-chart.svg")
-			[title="Comunicação"] i
-				mask-image: url("/ippm-static/img/icons/megaphone.svg")
-			[title="Escopo"] i
-				mask-image: url("/ippm-static/img/icons/badge.svg")
-			[title="Cronograma"] i
-				mask-image: url("/ippm-static/img/icons/calendar.svg")
-			[title="Recursos"] i
-				mask-image: url("/ippm-static/img/icons/account-box.svg")
-			[title="Riscos e Problemas"] i
-				mask-image: url("/ippm-static/img/icons/alert.svg")
-			[title="Bibliotecas"] i
-				mask-image: url("/ippm-static/img/icons/folder.svg")
-
-
 		.content
 			display: flex
 			gap: .25rem
@@ -447,11 +382,6 @@
 							right: 0
 							transform: translateY(-50%)
 
-
-
-
-
-
 		.timeline
 			background-color: var(--neutral_0)
 			border-radius: 1.25rem
@@ -546,13 +476,6 @@
 @include base.for-size(phone)
 	.page-project
 		.main
-			.project-menu
-				flex-wrap: wrap
-				& > li
-					flex: 0 0 calc(50% - .12rem)
-					min-width: 0
-					height: 2.25rem
-		
 			.content
 				flex-direction: column
 

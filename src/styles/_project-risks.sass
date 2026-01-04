@@ -1,0 +1,65 @@
+@use "variables" as *
+@use "base"
+
+.risk-charts
+	flex: 0 0 22.5rem
+	display: flex
+	gap: .25rem
+
+	& > div
+		background-color: var(--neutral_0)
+		border-radius: 1.25rem
+
+		header
+			height: 2.5rem
+			padding: 0 1rem
+			display: flex
+			align-items: center
+		h2
+			font-size: .9rem
+			font-weight: 900
+			text-transform: uppercase
+
+	.situation
+		flex: 0 0 33%
+
+	.risk-map
+		flex: 1
+
+
+.risk-timeline
+	background-color: var(--neutral_0)
+	border-radius: 1.25rem
+	margin-top: .25rem
+	box-sizing: border-box
+	padding: 1.25rem
+
+	& > div
+		height: 48rem
+		box-sizing: border-box
+		border-radius: .5rem
+		border: solid 1px var(--neutral_100)
+
+
+@include base.for-size(desk_sm)
+	.risk-charts
+		.situation
+			flex: 0 0 40%
+
+
+@include base.for-size(tablet_md)
+	.risk-charts
+		.situation
+			flex: 0 0 50%
+
+
+@include base.for-size(phone)
+	.risk-charts
+		flex-direction: column
+		flex-wrap: wrap
+
+		& > div
+			min-height: 200px
+
+		.situation
+			flex: 1

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectMenu from '../components/ProjectMenu.astro';
+---
+
+<BaseLayout title="Projeto 1 - Riscos" pageClass="page-project" description="Soluções Completas para Escritórios de Projetos (PMOs)">
+
+	<header class="page-header">
+		<a href={`${import.meta.env.BASE_URL}`} class="back" title="Início"><i></i></a>
+		<hgroup>
+			<h1>Projeto 1</h1>
+			<h2>Riscos</h2>
+		</hgroup>
+	</header>
+
+	<ProjectMenu />
+
+	<section class="risk-charts">
+		<div class="situation">
+			<header>
+					<h2>Situação</h2>
+				</header>
+		</div>
+
+		<div class="risk-map">
+			<header>
+					<h2>Mapa de Riscos</h2>
+				</header>
+		</div>
+	</section>
+
+	<section class="risk-timeline">
+		<div>
+			[timeline]
+		</div>
+	</section>
+
+</BaseLayout>
+
